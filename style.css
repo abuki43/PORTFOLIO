@@ -562,7 +562,7 @@ nav ul li a:hover {
 
 #projects .card {
     width: 290px;
-    border: 2px solid gray;
+    border: 2px solid #d3d7e2;
     border-radius: 8px;
     height: 19rem;
     overflow: hidden;
