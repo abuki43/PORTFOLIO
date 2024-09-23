@@ -90,6 +90,32 @@ nav {
   z-index: 2;
   max-width: 800px;
   animation: fadeIn 2s ease-in-out;
+  padding: 2rem;
+}
+
+.intro-content h1 {
+  position: relative;
+  display: inline-block;
+}
+
+.intro-content h1::before,
+.intro-content h1::after {
+  content: "";
+  display: block;
+  width: 60px; /* Adjust as needed */
+  height: 2px;
+  background-color: #eaeaea;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.intro-content h1::before {
+  left: -80px; /* Adjust as needed */
+}
+
+.intro-content h1::after {
+  right: -80px; /* Adjust as needed */
 }
 
 .intro-content h5 {
@@ -118,7 +144,7 @@ nav {
 
 .intro-content .button:hover {
   background: #05f7ba;
-  color: #0d0d0d;
+  color: #fff;
 }
 
 .intro-content .button::before {
@@ -241,6 +267,11 @@ nav {
 
 .skill:hover::before {
   top: 0;
+}
+.custom-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
 }
 
 /* Projects Section */
