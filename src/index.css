@@ -11,6 +11,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -18,12 +19,13 @@ body {
   min-width: 320px;
   min-height: 100vh;
   cursor: none;
+  overflow-x: hidden;
 }
 
 .cursor-dot {
   width: 8px;
   height: 8px;
-  background-color: theme('colors.primary');
+  background-color: theme("colors.primary");
   position: fixed;
   pointer-events: none;
   border-radius: 50%;
@@ -33,7 +35,7 @@ body {
 .cursor-ring {
   width: 32px;
   height: 32px;
-  border: 2px solid theme('colors.primary');
+  border: 2px solid theme("colors.primary");
   position: fixed;
   pointer-events: none;
   border-radius: 50%;
@@ -41,7 +43,8 @@ body {
 }
 
 @media (max-width: 768px) {
-  .cursor-dot, .cursor-ring {
+  .cursor-dot,
+  .cursor-ring {
     display: none;
   }
   body {
@@ -51,7 +54,11 @@ body {
 
 .glitch-text {
   position: relative;
-  background: linear-gradient(45deg, theme('colors.primary'), theme('colors.secondary'));
+  background: linear-gradient(
+    45deg,
+    theme("colors.primary"),
+    theme("colors.secondary")
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -67,12 +74,13 @@ body {
 }
 
 .scroll-indicator::before {
-  content: '';
+  content: "";
   @apply w-1 h-1 bg-gray-400 dark:bg-gray-600 rounded-full mt-2;
 }
 
 @keyframes blob {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   25% {
