@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { link } from "framer-motion/client";
 import {
   FiGithub,
   FiLinkedin,
@@ -7,9 +6,11 @@ import {
   FiSend,
   FiInstagram,
 } from "react-icons/fi";
+import { useEffect, useRef } from "react";
 
 const Hero = () => {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const nameRef = useRef(null);
 
   const socialIcons = [
     { icon: FiGithub, link: "" },
@@ -21,23 +22,36 @@ const Hero = () => {
     { icon: FiInstagram, link: "https://www.instagram.com/abuki431/" },
   ];
 
-  const handleMouseOver = (event) => {
+  const scrambleText = (element) => {
     let iterations = 0;
     const interval = setInterval(() => {
-      event.target.innerText = event.target.innerText
+      element.innerText = element.innerText
         .split("")
         .map((letter, index) => {
           if (index < iterations) {
-            return event.target.dataset.value[index];
+            return element.dataset.value[index];
           }
           return letters[Math.floor(Math.random() * 26)];
         })
         .join("");
 
-      if (iterations >= event.target.dataset.value.length)
+      if (iterations >= element.dataset.value.length) {
         clearInterval(interval);
+      }
       iterations += 1 / 3;
     }, 30);
+  };
+
+  useEffect(() => {
+    if (nameRef.current) {
+      setTimeout(() => {
+        scrambleText(nameRef.current);
+      }, 500); // Delay the initial animation
+    }
+  }, []);
+
+  const handleMouseOver = (event) => {
+    scrambleText(event.target);
   };
 
   return (
@@ -59,6 +73,7 @@ const Hero = () => {
           className="text-center"
         >
           <h1
+            ref={nameRef}
             className="glitch-text text-6xl md:text-8xl font-bold mb-6 cursor-default"
             data-value="ABUBEKER ABE"
             onMouseOver={handleMouseOver}
@@ -72,8 +87,8 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto"
           >
-            Crafting digital solutions that push the boundaries of web
-            development
+            Crafting digital solutions that solve real-world problems and push
+            the boundaries of web development.
           </motion.p>
 
           <motion.div
