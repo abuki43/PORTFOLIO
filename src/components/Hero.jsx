@@ -88,7 +88,7 @@ const Hero = () => {
             className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto"
           >
             Crafting digital solutions that solve real-world problems and push
-            the boundaries of web development.
+            the boundaries of full stack development.
           </motion.p>
 
           <motion.div

@@ -7,12 +7,12 @@ const About = () => {
     {
       icon: <FiCode className="w-6 h-6" />,
       title: "Frontend Development",
-      description: "React, JavaScript, HTML/CSS, Tailwind CSS",
+      description: "React, JavaScript,Typescript, HTML/CSS, Tailwind CSS",
     },
     {
       icon: <FiDatabase className="w-6 h-6" />,
       title: "Backend Development",
-      description: "Node.js, Express, MongoDB, REST API, MySql, Firebase",
+      description: "Node.js, Express, MongoDB, REST API, MySql, Firebase,Postgres",
     },
     {
       icon: <FiLayout className="w-6 h-6" />,
@@ -54,7 +54,7 @@ const About = () => {
               className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             >
               <div className="text-primary mb-4">{skill.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{skill.title}</h3>
+              <h3 className="text-xl dark:text-primary font-semibold mb-2">{skill.title}</h3>
               <p className="text-gray-600 dark:text-gray-300">
                 {skill.description}
               </p>

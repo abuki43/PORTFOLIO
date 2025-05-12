@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600 dark:text-gray-300 mb-4 md:mb-0">
-            © 2024 Abubeker Abe. All rights reserved.
+            © 2025 Abubeker Abe. All rights reserved.
           </p>
           <div className="flex space-x-4">
             <a
